@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir wheel
 RUN pip install --no-cache-dir -r requirements.txt
 
-# copy the rest of the configuration
+# copy the rest of the app
 COPY . .
 
 # run the API server

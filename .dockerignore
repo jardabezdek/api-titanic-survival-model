@@ -1,0 +1,5 @@
+# Content to ignore when building docker image
+.git
+.gitignore
+README.md
+venv
