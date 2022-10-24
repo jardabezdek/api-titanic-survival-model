@@ -21,7 +21,7 @@ from fastapi import FastAPI, Query
 
 MODEL_PATH = os.path.join(
     os.path.dirname(__file__),
-    "models/model.pickle"
+    "titanic/model.pickle"
 )
 
 # load model

@@ -11,23 +11,35 @@ Deployed on [Heroku](https://www.heroku.com/).
 
 ## :construction_worker_man: Setup
 
-## Deployment
+### Local development
+
+1. Intall requirements from `requirements-dev.txt`.
+
+> The only difference between `requirements-dev.txt` and `requirements.txt` is
+that in `requirements-dev.txt` there is `notebook` extra dependency.
+
+### Docker for Heroku deployment
+
+> Prerequisite for the following steps is to have
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
+on our system.
+
+1. In project root directory, build the docker image
+`docker build -t api-titanic-survival-model:latest .`
+1. Run the docker container with web server running inside:
+`docker run -i -e "PORT=8000" -p 8000:8000 api-titanic-survival-model:latest`
+1. In logs, you should see a local URL address with running API.
+
+### Deployment
 
 ### Heroku
 
-The repository is ready to be deployed to Heroku without any extra hassle. For deployment, follow the following guide:
+The repository is ready to be deployed to Heroku without any extra hassle.
+For deployment, follow these steps.
 
-- Review the `heroku.yml` file to see configuration for Heroku
-- [Install Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and log in to your Heroku
-  account: `heroku login`
-- [Create the app on Heroku](https://devcenter.heroku.com/articles/creating-apps)
-- Set stack for the project to container: `heroku stack:set container -a=<name of the app>`
-- [Integrate the app with GitHub for auto-deployments](https://devcenter.heroku.com/articles/github-integration)
-
-### Local Setup
-
-- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) on your system
-- Build the Docker service `docker image build -t api-service:0.1 .`
-- Run the service in an interactive mode: `docker container run -i -e "PORT=8000" -p 8000:8000 api-service:0.1`
-
-*TODO*
+1. Review the `heroku.yml` file to see configuration for Heroku.
+1. [Install Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and
+log in to your Heroku account: `heroku login`.
+1. [Create the app on Heroku](https://devcenter.heroku.com/articles/creating-apps).
+1. Set stack for the project to container: `heroku stack:set container -a=<name of the app>`.
+1. [Integrate the app with GitHub for auto-deployments](https://devcenter.heroku.com/articles/github-integration).
