@@ -30,9 +30,7 @@ on our system.
 `docker run -i -e "PORT=8000" -p 8000:8000 api-titanic-survival-model:latest`
 1. In logs, you should see a local URL address with running API.
 
-### Deployment
-
-### Heroku
+### Deployment to Heroku
 
 The repository is ready to be deployed to Heroku without any extra hassle.
 For deployment, follow these steps.
